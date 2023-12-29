@@ -1,0 +1,23 @@
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: myKafkaGroup
+      auto-offset-reset: earliest
+  datasource:
+    url: jdbc:postgresql://localhost:5432/wikimedia
+    username: postgres
+    password: 1234
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+
